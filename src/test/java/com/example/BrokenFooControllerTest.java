@@ -5,8 +5,7 @@ import io.quarkus.test.component.QuarkusComponentTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @QuarkusComponentTest
@@ -28,6 +27,6 @@ class BrokenFooControllerTest {
 
         FooResponse result = fooController.getFoo("1");
 
-        assertThat(result, is(fooResponse));
+        assertEquals(fooResponse, result);
     }
 }
